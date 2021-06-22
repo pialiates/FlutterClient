@@ -1,0 +1,97 @@
+﻿<Window x:Class="FlutterSignalRClient.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlutterSignalRClient.Views"
+        xmlns:viewModels="clr-namespace:FlutterSignalRClient.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="49*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel
+            Grid.Column="0">
+
+            <Label
+                Content="BekleyenSiparis"/>
+            <Label
+                Content="{Binding User.Santral.UretimOzet.BekleyenSiparis}"/>
+
+            <Label
+                Content="BekleyenUretim"/>
+            <Label
+                Content="{Binding User.Santral.UretimOzet.BekleyenUretim}"/>
+
+            <Label
+                Content="EnerjiTuketim"/>
+            <Label
+                Content="{Binding User.Santral.UretimOzet.EnerjiTuketim}"/>
+
+            <Label
+                Content="GunlukUretim"/>
+            <Label
+                Content="{Binding User.Santral.UretimOzet.GunlukUretim}"/>
+
+            <Label
+                Content="SantralVerim"/>
+            <Label
+                Content="{Binding User.Santral.UretimOzet.SantralVerim}"/>
+
+            <Label
+                Content="UretilenSiparis"/>
+            <Label
+                Content="{Binding User.Santral.UretimOzet.UretilenSiparis}"/>
+
+
+        </StackPanel>
+
+        <StackPanel
+            Grid.Column="1">
+
+            <Label
+                Content="BekleyenSiparis"/>
+            <TextBox
+                Text="{Binding UretimOzet.BekleyenSiparis}"/>
+
+            <Label
+                Content="BekleyenUretim"/>
+            <TextBox
+                Text="{Binding UretimOzet.BekleyenUretim}"/>
+
+            <Label
+                Content="EnerjiTuketim"/>
+            <TextBox
+                Text="{Binding UretimOzet.EnerjiTuketim}"/>
+
+            <Label
+                Content="GunlukUretim"/>
+            <TextBox
+                Text="{Binding UretimOzet.GunlukUretim}"/>
+
+            <Label
+                Content="SantralVerim"/>
+            <TextBox
+                Text="{Binding UretimOzet.SantralVerim}"/>
+
+            <Label
+                Content="UretilenSiparis"/>
+            <TextBox
+                Text="{Binding UretimOzet.UretilenSiparis}"/>
+
+
+            <Button
+                Content="Send"
+                Command="{Binding UretimOzetSendCommand}"/>
+            
+
+        </StackPanel>
+
+    </Grid>
+</Window>
